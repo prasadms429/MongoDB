@@ -1,8 +1,15 @@
 // First run 'windows command prompt' as administrator, then type command 'mongo' to open mongo interface.
 show dbs  // shows the current databases in system
 use snacktime   // creates database named 'snacktime'
-db.FavoriteSnack.insertOne({snack:"popcorn"})   // 'FavoriteSnack' is the collection in mongoDB and we insert one document to this collection using this command.
+db.FavoriteSnack.insertOne({snack:"popcorn"})   // 'FavoriteSnack' is the collection in mongoDB and we insert one document to this collection using this command. where db means database.
 show dbs    // After adding collection only we can view our database that is created.
-db.FavoriteSnack.find({})   // displays all documents inside the databases.
+db.FavoriteSnack.find({})   // displays all documents inside the databases. 
 db.FavoriteSnack.insertOne({snack:"sunflower seeds"})
 db.FavoriteSnack.insertOne({snack:"chocolate",preptime:"30m"})
+
+db.FavoriteSnack.updateOne({snack:"chocolate"},{$set: {snack:"cupcake"}}) // It update document from chocolate to cupcake
+db.FavoriteSnack.find({})
+db.FavoriteSnack.updateOne({snack:"sunflower seeds"},{$set:{preptime:"30m"}})   // It update document and adds preptime to it.
+db.FavoriteSnack.find({}).pretty()    // It displays documents in a nicer way.
+db.FavoriteSnack.updateMany({preptime:"30m"},{$set:{preptime:"45m"}})   // This update many documents with preptime with 30m to 45m
+db.FavoriteSnack.remove({snack:"popcorn"})    // It deletes snack popcorn from document
