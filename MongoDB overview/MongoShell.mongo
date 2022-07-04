@@ -1,0 +1,8 @@
+// First run 'windows command prompt' as administrator, then type command 'mongo' to open mongo interface.
+show dbs  // shows the current databases in system
+use snacktime   // creates database named 'snacktime'
+db.FavoriteSnack.insertOne({snack:"popcorn"})   // 'FavoriteSnack' is the collection in mongoDB and we insert one document to this collection using this command.
+show dbs    // After adding collection only we can view our database that is created.
+db.FavoriteSnack.find({})   // displays all documents inside the databases.
+db.FavoriteSnack.insertOne({snack:"sunflower seeds"})
+db.FavoriteSnack.insertOne({snack:"chocolate",preptime:"30m"})
