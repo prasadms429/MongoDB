@@ -1,0 +1,4 @@
+show collections    // To display current collections.
+db.Snak.insertOne({snack:"popcorn"})    //add document to 'Snak' collection
+show collections  // Now it displays 'Snak' collection
+db.Snak.find({}).pretty()   // Displays all documents.
